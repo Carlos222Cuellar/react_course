@@ -1,0 +1,25 @@
+// body {
+//     margin: 0px;
+//     background-color: red;
+//     color: white;
+// }
+body {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    background: #8f57fd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*
+En Linux/Ubuntu con Chrome, se ven las barras de navegación y el sitio pierde belleza.
+
+con esto se quita
+*/
+
+::-webkit-scrollbar {
+    display: none;
+}
