@@ -66,6 +66,9 @@ module.exports = {
     },
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   // Se añaden los plugins que necesitamos
   plugins: [
   // pasamo un objeto con la configuracion que necesitamos

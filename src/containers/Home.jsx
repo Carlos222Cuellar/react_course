@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';//le tenemos que pasar useState y useEffect para poder usar Hooks
-import Header from '../components/Header';
+//import Header from '../components/Header';
 import '../assets/styles/App.scss';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carrusel from '../components/Carrusel';
 import CarruselItem from '../components/CarruselItem';
-import Footer from '../components/Footer';
+//import Footer from '../components/Footer';
 
 //lo traemos porque aqui es donde vamos a traer nuestros componentes
 //para unirlos en un solo componente principal
@@ -13,7 +13,7 @@ import Footer from '../components/Footer';
 //vamos a crear nuestro container
 
 //tenemos que cambiarle de un return explicito a un return entre llaves
-const App = () => {
+const Home = () => {
   //aqui va ir la logica
   //vamos a añadir a mi estado y vamos a traer dos elemntos el primero es el elemento donde guardo mi estado y el segundo recibe los cambios
   const [video, setvideo] = useState({ mylist: [], trends: [], originals: [] });//stateUse recibe algo para inicializar en este caso un [] vacio
@@ -29,8 +29,9 @@ const App = () => {
   //probando si trae los datos
   console.log(video);
   return (
-    <div className='App'>
-      <Header />
+    //le pasamos el Reac.fragment para poder decirle que no cree un nodo mas en el dom
+    <>
+      {/*<Header />  ya no se usa porque en Layout usaremos la vista del header lo mismo para el footer*/ }
       <Search />
       {/**como teniamos tres secciones en la original, entonces lo haremos igual aqui
       pero para que nuestro nombre de la lista en el encabezado varie segun la seccion lo que haremos es
@@ -78,9 +79,9 @@ const App = () => {
           }
         </Carrusel>
       </Categories>
-      <Footer />
-    </div>
+      { /*<Footer /> */ }
+    </>
   );
 };
 
-export default App;
+export default Home;
