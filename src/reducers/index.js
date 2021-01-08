@@ -20,6 +20,12 @@ const Reducer = (state, action) => { //recibe dos valores el state y una accion 
         ...state,
         user: action.payload, //asigno los elementos a user
       };
+      //agregando el reducer poara cerrar sesion
+    case 'LOGOUT_REQUEST':
+      return {
+        ...state,
+        user: action.payload, //asigno los elementos a user
+      };
     default:
       return state;
   };
