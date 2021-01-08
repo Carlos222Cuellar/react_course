@@ -26,6 +26,12 @@ const Reducer = (state, action) => { //recibe dos valores el state y una accion 
         ...state,
         user: action.payload, //asigno los elementos a user
       };
+      //el reducer para el registro
+    case 'REGISTER_REQUEST':
+      return {
+        ...state,
+        user: action.payload, //asigno los elementos a user
+      };
     default:
       return state;
   };
