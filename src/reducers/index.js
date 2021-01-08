@@ -1,5 +1,5 @@
 const Reducer = (state, action) => { //recibe dos valores el state y una accion y retorna el estado
-
+//manejan la imfromacion y las ponen en el estado
   switch (action.type) {
     case 'SET_FAVORITE':
       // eslint-disable-next-line no-case-declarations
@@ -14,6 +14,11 @@ const Reducer = (state, action) => { //recibe dos valores el state y una accion 
       return {
         ...state,
         mylist: state.mylist.filter((items) => items.id !== action.payload),
+      };
+    case 'LOGIN_REQUEST':
+      return {
+        ...state,
+        user: action.payload, //asigno los elementos a user
       };
     default:
       return state;
