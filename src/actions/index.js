@@ -36,3 +36,9 @@ export const registerRequest = (payload) => ({
   payload,
 });
 
+//creando el action para recuperar la fuente del video para reproducirlo
+export const getVideoSource = (payload) => ({
+  type: 'GET_VIDEO_SOURCE',
+  payload,
+});
+

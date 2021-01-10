@@ -32,6 +32,14 @@ const Reducer = (state, action) => { //recibe dos valores el state y una accion 
         ...state,
         user: action.payload, //asigno los elementos a user
       };
+      //el reducir de el action para ir a traer el sources del video
+    case 'GET_VIDEO_SOURCE':
+      return {
+        ...state,
+        playing: state.trends.find((item) => item.id === Number(action.payload)) || //paso el string a tipo number como el id lo recibo por parametro este es un string lo tengo que pasar a numero), //en el arreglo de trends de nuestro inital state voy a usar fin para buscar los id de los item y si uno es identico a el id del action que recibo ese quiero reproducir
+        state.originals.find((item) => item.id === Number(action.payload)) || //por si no encuentra nada en trends va ir a buscarlos a originals
+        [], //si noe encuentra en ninguno de los dos significa que no existe por lo tanto devolvemos un arreglo vacio
+      };
     default:
       return state;
   };

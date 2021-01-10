@@ -4,6 +4,7 @@ import Home from '../containers/Home';//exportamos el Home de nuestra App a usar
 import Login from '../containers/Login';//exportamos el login para usarlo
 import Register from '../containers/Register';//importamos el register
 import NotFound from '../containers/NotFound';//imporyando el notfound
+import Player from '../containers/Player'; //importamos el player para la reproduccion de videos
 import Layout from '../components/Layout';//importamos layout que va manejar nuestro footer y header
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
+        <Route exact path='/player/:id' component={Player} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
